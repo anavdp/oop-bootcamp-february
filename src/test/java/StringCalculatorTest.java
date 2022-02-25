@@ -24,12 +24,17 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void itShouldAddNumbersWithMixedDelimeters() {
+    public void itShouldAddNumbersWithMixedDelimiters() {
         assertEquals(StringCalculator.add("2\n3,4"), 9);
     }
 
     @Test(expectedExceptions = ArithmeticException.class, expectedExceptionsMessageRegExp = "negatives not allowed:-1,-3")
     public void itShouldThrowExceptionWhenNegativeNumbersArePassed() {
         StringCalculator.add("-1,2,-3");
+    }
+
+    @Test
+    public void itShouldAddNumbersIgnoringGreaterThan1000() {
+        assertEquals(StringCalculator.add("2\n1001,4"), 6);
     }
 }
