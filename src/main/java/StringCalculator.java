@@ -7,10 +7,7 @@ public class StringCalculator {
             return 0;
         }
         var numbersToSum = s.split("[,\\n]");
-        if (numbersToSum.length > 1) {
-            return Arrays.stream(numbersToSum).mapToInt(Integer::parseInt).sum();
-        }
-        return Integer.parseInt(s);
+        return Arrays.stream(numbersToSum).mapToInt(Integer::parseInt).sum();
     }
 
     private static void checkNegativeValues(String s) {
